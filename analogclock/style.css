@@ -1,0 +1,39 @@
+.clock {
+    width: 200px;
+    height: 200px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    position: relative;
+    /* top: 500px; */
+    /* text-align: center; */
+    top: 50%;
+    left: 50%;
+    /* transform:translate(-50%,-50%); */
+  }
+
+  .hour,
+  .minute,
+  .second {
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    background: #003cff;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition-timing-function: steps(1);
+    transition-duration: 1s;
+    transition-property: transform;
+  }
+
+  .minute {
+    height: 3px;
+    background: #00fa3e;
+    transition-duration: 0.5s;
+  }
+
+  .second {
+    height: 3px;
+    background: red;
+    transition-duration: 0.25s;
+  }
