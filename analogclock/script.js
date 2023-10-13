@@ -8,13 +8,13 @@ function updateClock(){
     const m=newDate.getMinutes()
     const s=newDate.getSeconds()
 
-    const hourRow = (h - 3) * 30 + m * 0.5;
-    const minuteRow  = (m - 15) * 6 + s * 0.1;
-    const secondRow  = (s - 15) * 6;
+   const hourRow =  ((h / 12) * 360) + ((m/60)*30) + 90;
+   const minuteRow  = ((m/ 60) * 360) + ((s/60)*6) + 90;
+   const secondRow  =((s / 60) * 360) + 90
 
-    hours.style.transform = `rotate(${hourRow}deg)`;
-    minutes.style.transform = `rotate(${minuteRow}deg)`;
-    seconds.style.transform = `rotate(${secondRow}deg)`;
+    hours.style.transform = `rotate(${hourRow}deg)`
+    minutes.style.transform =`rotate(${minuteRow}deg)`
+    seconds.style.transform =  `rotate(${secondRow}deg)`
 }
 updateClock()
 setInterval(updateClock,1000)
